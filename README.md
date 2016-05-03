@@ -1,3 +1,2 @@
 # ansible
-Customized ansible shell scripts for Hadoop pre-requisite Check and Enforcement.
-Installing Cloudera Manager/Ambari
+Customized interactive ansible shell scripts for Cloudera Manager/Ambari installation with Pre-requisite Check and  Enforcement
