@@ -21,5 +21,5 @@ Customized interactive ansible shell scripts for Cloudera Manager/Ambari install
 * prerequisiteCheck.sh - After initializing Ansible inventory, this script is used to do Pre-requisite Check on  hosts.
 * prerequisiteEnabler.sh - Enforcing Hadoop Pre-requisites
 * installClouderaManager.sh - Installing Cloudera Manager
-* installAmbari.sh - Instllaing Ambari
+* installAmbari.sh - Installing Ambari
 * cleanAnsibleHosts.sh - Cleaning up Ansible inventory
