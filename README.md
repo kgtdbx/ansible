@@ -1,5 +1,5 @@
 # Introduction
-Customized interactive ansible shell scripts for Cloudera Manager/Ambari installation with Pre-requisite Check and  Enforcement
+Customized and interactive ansible shell scripts for Cloudera Manager/Ambari installation with Pre-requisite Check and  Enforcement
 
 ## Pre-requisites
 
