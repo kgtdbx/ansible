@@ -1,0 +1,19 @@
+---
+#Playbook for Cloudera/Ambari based Hadoop Installation
+
+- hosts: "{{ nodes }}" 
+  name: Setting the prerequisites for Cloudera/Ambari based hadoop installation
+  remote_user: root
+  
+  roles:
+     - os_check
+    # - yumrepo
+     - iptables
+     - ip6tables
+     - ipv6
+     - selinux
+     - hugepage
+     - swappiness
+    # - java
+     
+  

@@ -1,0 +1,19 @@
+---
+#Playbook to disable ipv6
+
+# - name: Disable ipv6
+ #  lineinfile: dest=/etc/sysctl.conf line="net.ipv6.conf.all.disable_ipv6=1"
+ #  lineinfile: dest=/etc/sysctl.conf line="net.ipv6.conf.default.disable_ipv6=1"
+ #  lineinfile: dest=/etc/sysctl.conf line="net.ipv6.conf.lo.disable_ipv6=1"
+ #  notify: reload sysctl
+
+ - name: Disable ipv6
+   lineinfile:
+    dest: /etc/sysctl.conf
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+   with_items:
+     - { regexp: '^net.ipv6.conf.all.disable_ipv6', line: 'net.ipv6.conf.all.disable_ipv6=1' }
+     - { regexp: '^net.ipv6.conf.default.disable_ipv6', line: 'net.ipv6.conf.default.disable_ipv6=1' }
+     - { regexp: '^net.ipv6.conf.lo.disable_ipv6=1', line: 'net.ipv6.conf.lo.disable_ipv6=1' }
+   notify: reload sysctl

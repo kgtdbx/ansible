@@ -1,0 +1,6 @@
+---
+#Playbook to check os compactibilty
+
+ - name: Exiting playbook as OS version is not supported!! Only Redhat 6.x and CentOS 6.x are supported!
+   command: exit 
+   when: ansible_distribution == "CentOS" and ansible_distribution_major_version != "6"

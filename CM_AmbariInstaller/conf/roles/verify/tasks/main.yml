@@ -1,0 +1,2 @@
+ - name: Checking Pre-requisites
+   script: ../../../../bin/verify.sh

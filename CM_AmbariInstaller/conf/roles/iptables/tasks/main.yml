@@ -1,0 +1,14 @@
+---
+#Playbook to disable iptables
+
+  - name: Disable iptables
+    command: iptables -P INPUT ACCEPT
+    command: iptables -P FORWARD ACCEPT
+    command: iptables -P OUTPUT ACCEPT
+    command: iptables -t nat -F
+    command: iptables -t mangle -F
+    command: iptables -F
+ 
+  - name: Stop iptables   
+    service: name=iptables state=stopped enabled=false
+

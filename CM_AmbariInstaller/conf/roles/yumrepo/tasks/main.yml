@@ -1,0 +1,9 @@
+---
+#Playbook to set up repos
+
+ - name: Copy the EPEL repository definition
+   copy: src=/root/ansible/prerequisites/roles/yumrepo/files/epel.repo dest=/etc/yum.repos.d/epel.repo
+
+ - name: Copy the CentOS repository definition
+   copy: src=/root/ansible/prerequisites/roles/yumrepo/files/CentOS-Base.repo dest=/etc/yum.repos.d/CentOS-Base.repo
+

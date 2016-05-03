@@ -1,0 +1,7 @@
+---
+#Playbook to disable swappiness
+
+  - name: Disable swappiness
+    lineinfile: dest=/etc/sysctl.conf line="vm.swappiness=0"
+    notify: reload sysctl
+

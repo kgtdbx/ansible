@@ -1,0 +1,18 @@
+---
+#Playbook to disable transparent huge page compaction
+
+# - name: Disable THP
+   #lineinfile: dest=/etc/rc.local line="echo never >  /sys/kernel/mm/redhat_transparent_hugepage/defrag"
+ #  lineinfile: dest=/etc/rc.local line="echo never >  /sys/kernel/mm/redhat_transparent_hugepage/enabled"
+   - name: Disable THP
+     lineinfile:
+      dest: /etc/rc.local
+      line: "{{ item.line }}"
+     with_items:
+       - { line: 'echo never >  /sys/kernel/mm/redhat_transparent_hugepage/defrag' }
+       - { line: 'echo never >  /sys/kernel/mm/redhat_transparent_hugepage/enabled' }
+
+   - name: THP disable in shell  
+     command: echo never >  /sys/kernel/mm/redhat_transparent_hugepage/defrag
+     command: echo never >  /sys/kernel/mm/redhat_transparent_hugepage/enabled
+

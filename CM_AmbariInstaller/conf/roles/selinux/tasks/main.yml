@@ -1,0 +1,9 @@
+---
+#Playbook to disable selinux
+
+  - name: Disable selinux
+    lineinfile: dest=/etc/selinux/config regexp=^SELINUX= line=SELINUX=disabled
+
+  - name: ensure SELinux is turned off  
+    shell: /usr/sbin/setenforce 0 || /bin/true
+

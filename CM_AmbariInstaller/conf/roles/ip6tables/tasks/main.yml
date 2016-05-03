@@ -1,0 +1,15 @@
+---
+#Playbook to disable ip6tables
+
+ - name: Disable ip6tables
+   command: ip6tables -P INPUT ACCEPT
+   command: ip6tables -P FORWARD ACCEPT
+   command: ip6tables -P OUTPUT ACCEPT
+   command: ip6tables -t nat -F
+   command: ip6tables -t mangle -F
+   command: ip6tables -F
+   command: ip6tables -X
+
+ - name: Stop ip6tables   
+   service: name=ip6tables state=stopped enabled=false
+

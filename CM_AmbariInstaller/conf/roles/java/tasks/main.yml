@@ -1,0 +1,12 @@
+---
+#Playbook to disable transparent huge page compaction
+
+ - name: Install Java
+   yum: name=oracle-j2sdk1.7-1.7.0+update67-1.x86_64 state=installed
+
+
+ - name: Installing Java
+   command: update-alternatives --install /usr/bin/java java /usr/java/jdk1.7.0_67-cloudera/bin/java 1
+   
+
+

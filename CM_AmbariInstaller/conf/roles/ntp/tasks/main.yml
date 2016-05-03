@@ -1,0 +1,16 @@
+---
+#Playbook to configure ntp service
+
+  - name: Install ntp service
+    yum: name={{ item }} state=installed
+    with_items:
+      - ntp
+      - ntpdate
+  - name: Copy ntp.conf template
+    template: src=/root/ansible/prerequisites/roles/ntp/templates/ntp.template dest=/etc/ntp.conf
+  - name: Stop ntpd
+    service: name=ntpd state=stopped
+  - name: Manual update of time using ntpdate  
+    command: /usr/sbin/ntpdate -b {{ ntp_host }}
+  - name: Start ntpd
+    service: name=ntpd state=started enabled=true
